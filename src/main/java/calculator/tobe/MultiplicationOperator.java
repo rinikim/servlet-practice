@@ -1,6 +1,7 @@
 package calculator.tobe;
 
-import org.example.calculator.domain.PositiveNumber;
+
+import calculator.domain.PositiveNumber;
 
 public class MultiplicationOperator implements ArithmeticOperator{
     @Override

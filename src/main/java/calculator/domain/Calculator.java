@@ -1,6 +1,7 @@
 package calculator.domain;
 
-import org.example.calculator.tobe.*;
+
+import calculator.tobe.*;
 
 import java.util.List;
 
