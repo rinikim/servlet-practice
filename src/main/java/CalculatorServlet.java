@@ -10,17 +10,10 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 
 @WebServlet("/calculate")   // 해당 요청이 들어오면 실행해
-public class CalculatorServlet implements Servlet {
+public class CalculatorServlet extends GenericServlet {
 
     private static final Logger log = LoggerFactory.getLogger(CalculatorServlet.class);
     private ServletConfig servletConfig;
-
-    @Override
-    public void init(ServletConfig servletConfig) throws ServletException {
-        // resource 초기화 로직
-        log.info("init");
-        this.servletConfig = servletConfig;
-    }
 
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
@@ -33,20 +26,5 @@ public class CalculatorServlet implements Servlet {
 
         PrintWriter writer = response.getWriter();
         writer.println(result);
-    }
-
-    @Override
-    public void destroy() {
-        // resource release
-    }
-
-    @Override
-    public String getServletInfo() {
-        return null;
-    }
-
-    @Override
-    public ServletConfig getServletConfig() {
-        return this.servletConfig;
     }
 }
